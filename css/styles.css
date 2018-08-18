@@ -233,7 +233,7 @@ nav h1 a {
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
-  margin: 15px 0 30px;
+  margin: 2rem 0;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.1;
@@ -275,6 +275,7 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+  margin: 2rem 0;
 }
 #reviews-list {
   margin: 0;
@@ -292,6 +293,9 @@ nav h1 a {
 }
 #reviews-list li p {
   margin: 0;
+}
+#restaurant-hours {
+  margin: 0 auto;
 }
 #restaurant-hours td {
   color: #666;

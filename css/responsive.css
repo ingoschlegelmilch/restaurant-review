@@ -1,4 +1,7 @@
 @media (max-width: 425px) {
+    body {
+        min-width: 320px;
+    }
     .filter-options {
         flex-direction: column;
     }
@@ -51,7 +54,6 @@
     }
     #reviews-container h2 {
         text-align: center;
-        margin: 0.5em 0 0.5em 0;
     }
     #reviews-list li {
         border-radius: 25px 0;
