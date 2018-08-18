@@ -26,7 +26,7 @@
         width: 50%;
         margin: auto;
     }
-    .inside header {
+    .inside header.main {
         position: fixed;
     }
     #breadcrumb {
@@ -52,6 +52,36 @@
     #reviews-container h2 {
         text-align: center;
         margin: 0.5em 0 0.5em 0;
+    }
+    #reviews-list li {
+        border-radius: 25px 0;
+    }
+    #reviews-list header {
+        display: flex;
+        background-color: #333;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+    #reviews-list header h1 {
+        color: white;
+        margin: 0;
+    }
+    #reviews-list header time {
+        color: #ddd;
+        text-shadow: 1px 1px 1px black;
+    }   
+    .rating-wrapper {
+        background-color: #f18200;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+    .rating {
+        color: white;
+        text-transform: uppercase;
+        padding: 1rem;
+    }
+    #reviews-list main {
+        padding: 0 1rem 1rem 1rem;
     }
 }
 @media (min-width: 426px) and (max-width: 1024px) {

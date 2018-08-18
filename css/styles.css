@@ -209,7 +209,7 @@ nav h1 a {
   flex-wrap: wrap;
   width: 100%;
 }
-.inside header {
+.inside header.main {
   width: 100%;
   z-index: 1000;
 }
@@ -283,17 +283,16 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
   position: relative;
   width: 85%;
 }
 #reviews-list li p {
-  margin: 0 0 10px;
+  margin: 0;
 }
 #restaurant-hours td {
   color: #666;
