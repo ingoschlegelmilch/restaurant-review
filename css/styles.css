@@ -60,7 +60,7 @@ nav {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 5em;
+  height: 7rem;
   background-color: #252831;
   text-align:center;
 }
@@ -80,6 +80,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
+    height: 1.3rem;
 }
 
 /* Display list items side by side */
@@ -216,8 +217,6 @@ nav h1 a {
 .inside #map-container {
   background: blue none repeat scroll 0 0;
   height: 25em;
-  right: 0;
-  top: 80px;
   width: 100%;
 }
 .inside #map {
@@ -286,10 +285,10 @@ nav h1 a {
   border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+  margin: 0 5% 30px;
   overflow: hidden;
   position: relative;
-  width: 85%;
+  width: 90%;
 }
 #reviews-list li p {
   margin: 0;
