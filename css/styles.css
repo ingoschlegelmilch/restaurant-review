@@ -156,7 +156,7 @@ nav h1 a {
 }
 #restaurants-list li {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
@@ -222,6 +222,9 @@ nav h1 a {
 }
 .inside #footer {
   bottom: 0;
+}
+#restaurant-container {
+  margin-bottom: 1.5rem;
 }
 #restaurant-name {
   color: #f18200;
@@ -296,6 +299,7 @@ nav h1 a {
 }
 #restaurant-hours {
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 #restaurant-hours td {
   color: #666;

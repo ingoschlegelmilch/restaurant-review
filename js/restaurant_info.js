@@ -84,6 +84,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute('aria-label', `Restaurant address: ${restaurant.address}`);
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
@@ -92,6 +93,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
+  cuisine.setAttribute('aria-label', `Type of cuisine: ${restaurant.cuisine_type}`);
   cuisine.innerHTML = restaurant.cuisine_type;
 
   // fill operating hours
@@ -107,8 +109,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  hours.setAttribute('aria-label', 'Opening hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
+    row.setAttribute('tabindex', '0');
 
     const day = document.createElement('td');
     day.innerHTML = key;
@@ -152,6 +156,7 @@ createReviewHTML = (review) => {
   const article = document.createElement('article');
   li.appendChild(article);
   article.className = "review";
+article.setAttribute('tabindex', '0');
   
   const header = document.createElement('header');
   article.appendChild(header);
