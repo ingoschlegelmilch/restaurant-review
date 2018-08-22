@@ -156,7 +156,8 @@ createReviewHTML = (review) => {
   const article = document.createElement('article');
   li.appendChild(article);
   article.className = "review";
-article.setAttribute('tabindex', '0');
+  // Add section to accessibility tree
+  article.setAttribute('tabindex', '0');
   
   const header = document.createElement('header');
   article.appendChild(header);
