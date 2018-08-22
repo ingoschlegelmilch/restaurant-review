@@ -20,14 +20,13 @@ var urlsToCache = [
     'img/7.jpg',
     'img/8.jpg',
     'img/9.jpg',
-    'img/10.jpg'/*,
+    'img/10.jpg',
     'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
     'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
-    'https://api.tiles.mapbox.com/v4/mapbox.streets/12/1205/1539.jpg70?access_token=pk.eyJ1IjoiaW5nb3NjaGxlZ2VsbWlsY2giLCJhIjoiY2pqdm5kYzFhN2ZmZzNrbnpydTVlMTl4dCJ9.xYaW6_k0KVIx-QDLLBAaOw',
-    'https://api.tiles.mapbox.com/v4/mapbox.streets/12/1206/1539.jpg70?access_token=pk.eyJ1IjoiaW5nb3NjaGxlZ2VsbWlsY2giLCJhIjoiY2pqdm5kYzFhN2ZmZzNrbnpydTVlMTl4dCJ9.xYaW6_k0KVIx-QDLLBAaOw',
-    'https://api.tiles.mapbox.com/v4/mapbox.streets/12/1205/1540.jpg70?access_token=pk.eyJ1IjoiaW5nb3NjaGxlZ2VsbWlsY2giLCJhIjoiY2pqdm5kYzFhN2ZmZzNrbnpydTVlMTl4dCJ9.xYaW6_k0KVIx-QDLLBAaOw',
-    'https://api.tiles.mapbox.com/v4/mapbox.streets/12/1206/1540.jpg70?access_token=pk.eyJ1IjoiaW5nb3NjaGxlZ2VsbWlsY2giLCJhIjoiY2pqdm5kYzFhN2ZmZzNrbnpydTVlMTl4dCJ9.xYaW6_k0KVIx-QDLLBAaOw',
-    'https://unpkg.com/leaflet@1.3.1/dist/images/marker-icon.png'*/
+    'https://unpkg.com/leaflet@1.3.1/dist/images/marker-icon-2x.png',
+    'https://unpkg.com/leaflet@1.3.1/dist/images/marker-icon.png',
+    'https://unpkg.com/leaflet@1.3.1/dist/images/marker-shadow.png',
+    'sw_registration.js'
 ];
 
 self.addEventListener('install', event => {
@@ -43,16 +42,21 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
-    console.log('fetch', event);
-    console.log('fetch', self.location.origin);
-    
-    if (event.request.url.startsWith(self.location.origin)) {
+    console.log('fetch', event.request);
+    const isLocal = event.request.url.startsWith(self.location.origin);
+    const isLeaflet = event.request.url.startsWith('https://unpkg.com/leaflet@1.3.1/dist');
+    if (isLocal || isLeaflet) {
         event.respondWith(
             caches.match(event.request).then(response => {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request);
+                fetch(event.request).then(response => {
+                    caches.open(staticCacheName).then(cache => {
+                        cache.add(event.request, response.clone());
+                        return response;
+                    })
+                })
             })
         );
     }
