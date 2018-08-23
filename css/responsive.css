@@ -1,3 +1,4 @@
+/* MOBILE */
 @media (max-width: 425px) {
     body {
         min-width: 320px;
@@ -64,6 +65,7 @@
         text-align: center;
     }
 }
+/* TABLET */
 @media (min-width: 426px) and (max-width: 1024px) {
     #restaurants-list {
         justify-content: center;
@@ -110,6 +112,7 @@
         font-size: 0.9rem;
     }
 }
+/* DESKTOP */
 @media (min-width: 1025px) {
     body {
         max-width: 1200px;
@@ -118,9 +121,9 @@
     #restaurants-list {
         border-top: 1px solid #d9d9d9;
     }
-    /* #restaurants-list li {
+    #restaurants-list li {
         flex: 1 1 auto;
-    } */
+    }
     #section-container {
         display: flex;
         flex-flow: row-reverse;

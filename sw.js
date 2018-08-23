@@ -29,6 +29,7 @@ var urlsToCache = [
     'sw_registration.js'
 ];
 
+// Puts everything inside the static cache into the browser's cache storage
 self.addEventListener('install', event => {
     console.log('static-v1 installing...', caches.open);
     event.waitUntil(
@@ -37,12 +38,15 @@ self.addEventListener('install', event => {
     );
 });
 
+// Just informing the dev that service worker is active
 self.addEventListener('activate', event => {
     console.log('static-v1 now ready to handle fetches!', event)
 })
 
+// Checks if requests are in local cache already and tries to match,
+// if there is none, requests are fetched and added to the cache
 self.addEventListener('fetch', event => {
-    console.log('fetch', event.request);
+    // console.log('fetch', event.request);
     const isLocal = event.request.url.startsWith(self.location.origin);
     const isLeaflet = event.request.url.startsWith('https://unpkg.com/leaflet@1.3.1/dist');
     if (isLocal || isLeaflet) {
