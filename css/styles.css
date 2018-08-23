@@ -56,7 +56,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   width: calc(100% - 50px);
 }
 /* ====================== Navigation ====================== */
-nav:first-of-type {
+nav {
   display: flex;
   flex-direction: column;
   width: 100%;
