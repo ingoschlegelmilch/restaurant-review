@@ -64,6 +64,9 @@ nav {
   background-color: #252831;
   text-align:center;
 }
+nav:last-of-type {
+  height: 2.9rem;
+}
 nav h1 {
   margin: auto;
 }
@@ -260,11 +263,13 @@ nav h1 a {
   width: 100%;
   border-radius: 0 0 25px 0;
 }
+#section-container, #reviews-container {
+  border-top: 1px solid #fff;
+}
 #restaurant-container, #reviews-container {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
   padding: 140px 40px 30px;
   width: 100%;
 }
