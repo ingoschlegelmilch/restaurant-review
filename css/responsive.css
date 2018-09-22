@@ -138,10 +138,11 @@
         align-self: flex-start;
         padding: 1rem 1rem 2rem;
     }
+    #restaurant-img, #restaurant-cuisine {
+        box-shadow: 10px 10px 30px #d9d9d9;
+    }
     #reviews-container h2{
         margin-left: 5%;
-    }
-    #reviews-list {
     }
     #reviews-list li {
         flex: 0 1 25%;
